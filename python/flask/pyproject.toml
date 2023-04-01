@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "spackle-example-flask"
+version = "0.1.0"
+description = ""
+authors = ["Hunter Clarke <hunter@spackle.so>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "spackle_example_flask"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+spackle-python = "^0.0.37"
+Flask = "^2.2.3"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
