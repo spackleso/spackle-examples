@@ -4,13 +4,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# gem "rails"
-
 gem "sinatra", "~> 3.0"
 gem "puma", "~> 6.2"
-
 gem "spackle-ruby", "~> 0.0.6"
-
 gem "dotenv", "~> 2.8"
-
 gem "sinatra-contrib", "~> 3.0"
