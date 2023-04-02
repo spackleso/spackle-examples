@@ -15,6 +15,5 @@ post '/customers' do
   start = Time.now
   customer = Spackle::Customer.retrieve(params[:customer_id])
   finish = Time.now
-  puts "Time to create customer: #{finish - start}"
   json customer: customer.data, time: finish - start
 end
