@@ -1,4 +1,3 @@
-require 'dotenv/load'
 require 'spackle'
 require 'sinatra'
 require "sinatra/json"
