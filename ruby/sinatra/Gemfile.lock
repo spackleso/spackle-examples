@@ -1410,7 +1410,7 @@ GEM
       rack-protection (= 3.0.5)
       sinatra (= 3.0.5)
       tilt (~> 2.0)
-    spackle-ruby (0.0.9)
+    spackle-ruby (0.0.10)
       aws-sdk (~> 3)
       nokogiri (~> 1.13)
       stripe (~> 8.3)
@@ -1426,7 +1426,7 @@ DEPENDENCIES
   puma (~> 6.2)
   sinatra (~> 3.0)
   sinatra-contrib (~> 3.0)
-  spackle-ruby (~> 0.0.9)
+  spackle-ruby (~> 0.0.10)
 
 BUNDLED WITH
    2.4.10
