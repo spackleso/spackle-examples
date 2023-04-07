@@ -2,7 +2,7 @@
 require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . '/Spackle/init.php';
 
-\Spackle\Spackle::setApiKey($_ENV['SPACKLE_API_KEY']);
+\Spackle\Spackle::setApiKey(getenv('SPACKLE_API_KEY'));
 
 function request_path()
 {
