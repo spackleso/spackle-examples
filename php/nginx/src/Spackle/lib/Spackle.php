@@ -100,6 +100,7 @@ class DynamoDBStore extends Store
             'credentials' => CredentialProvider::memoize($this->credentials),
             'region'      => $this->credentials->getAdapter()->region,
             'stats'       => true,
+            'scheme'      => 'http'
         ));
     }
 
