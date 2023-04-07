@@ -5,7 +5,7 @@ This repository contains a number of examples of how to use Spackle.
 ## Examples
 
 ### PHP
-* [Laravel](./php/laravel)
+* [Nginx](./php/nginx)
 
 ### Python
 * [Flask](./python/flask)
