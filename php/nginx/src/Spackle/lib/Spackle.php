@@ -66,6 +66,7 @@ class DynamoDBStore extends Store
     {
 
         $adapter = $this->credentials->getAdapter();
+        $start = microtime(true);
         $result = $this->client->getItem(array(
             'TableName' => $adapter->table_name,
             'Key' => array(
@@ -73,6 +74,8 @@ class DynamoDBStore extends Store
                 'CustomerId' => array('S' => $id . ':' . Spackle::$schemaVersion),
             ),
         ));
+        $end = microtime(true);
+        error_log("Spackle: DynamoDB getItem took " . ($end - $start) . " seconds");
 
         if ($result['Item']) {
             return json_decode($result['Item']['State']['S']);
