@@ -74,6 +74,7 @@ class DynamoDBStore extends Store
                 'CustomerId' => array('S' => $id . ':' . Spackle::$schemaVersion),
             ),
         ));
+        error_log(json_encode($result['@metadata']['transferStats']));
         $end = microtime(true);
         error_log("Spackle: DynamoDB getItem took " . ($end - $start) . " seconds");
 
@@ -98,6 +99,7 @@ class DynamoDBStore extends Store
             'version'     => 'latest',
             'credentials' => CredentialProvider::memoize($this->credentials),
             'region'      => $this->credentials->getAdapter()->region,
+            'stats'       => true,
         ));
     }
 
