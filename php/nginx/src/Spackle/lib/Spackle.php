@@ -66,7 +66,6 @@ class DynamoDBStore extends Store
     {
 
         $adapter = $this->credentials->getAdapter();
-        $start = microtime(true);
         $result = $this->client->getItem(array(
             'TableName' => $adapter->table_name,
             'Key' => array(
@@ -74,9 +73,6 @@ class DynamoDBStore extends Store
                 'CustomerId' => array('S' => $id . ':' . Spackle::$schemaVersion),
             ),
         ));
-        error_log(json_encode($result['@metadata']['transferStats']));
-        $end = microtime(true);
-        error_log("Spackle: DynamoDB getItem took " . ($end - $start) . " seconds");
 
         if ($result['Item']) {
             return json_decode($result['Item']['State']['S']);
@@ -99,7 +95,6 @@ class DynamoDBStore extends Store
             'version'     => 'latest',
             'credentials' => CredentialProvider::memoize($this->credentials),
             'region'      => $this->credentials->getAdapter()->region,
-            'stats'       => true,
             'scheme'      => 'http'
         ));
     }
