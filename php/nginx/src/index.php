@@ -2,6 +2,7 @@
 require_once __DIR__ . "/vendor/autoload.php";
 
 \Spackle\Spackle::setApiKey(getenv('SPACKLE_API_KEY'));
+\Spackle\Spackle::setSSLEnabled(false);
 
 function request_path()
 {
@@ -29,7 +30,7 @@ if ($path == 'customers') {
   $end = microtime(true);
   echo json_encode(
     array(
-      "customer" => $customer,
+      "customer" => $customer->data,
       "time" => $end - $start,
     )
   );

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc0d5d2c34982c3676e8df01fa5d9875",
+    "content-hash": "ff4ed0cefec7dd1db56dc6146dc825e9",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -752,20 +752,21 @@
         },
         {
             "name": "spackleso/spackle-php",
-            "version": "0.0.2",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spackleso/spackle-php.git",
-                "reference": "86eb63ec37cd248e3b84a5123d6480c5fe0731e9"
+                "reference": "981c633113fb173aedb73d326f430133e81e612d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/86eb63ec37cd248e3b84a5123d6480c5fe0731e9",
-                "reference": "86eb63ec37cd248e3b84a5123d6480c5fe0731e9",
+                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/981c633113fb173aedb73d326f430133e81e612d",
+                "reference": "981c633113fb173aedb73d326f430133e81e612d",
                 "shasum": ""
             },
             "require": {
-                "aws/aws-sdk-php": "^3.263"
+                "aws/aws-sdk-php": "^3.263",
+                "stripe/stripe-php": "^10.12"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.0"
@@ -789,9 +790,70 @@
             "description": "Spackle is the easiest way to integrate your PHP app with Stripe Billing. See https://www.spackle.so for details.",
             "support": {
                 "issues": "https://github.com/spackleso/spackle-php/issues",
-                "source": "https://github.com/spackleso/spackle-php/tree/0.0.2"
+                "source": "https://github.com/spackleso/spackle-php/tree/0.0.4"
             },
-            "time": "2023-04-08T16:18:39+00:00"
+            "time": "2023-04-08T23:06:34+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v10.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "9e8055d55e8212ad844f48d7cf525b630689be35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/9e8055d55e8212ad844f48d7cf525b630689be35",
+                "reference": "9e8055d55e8212ad844f48d7cf525b630689be35",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v10.12.1"
+            },
+            "time": "2023-04-04T19:13:21+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
