@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "312ffbb0dcb693eb3e60e1bdb128704a",
+    "content-hash": "dc0d5d2c34982c3676e8df01fa5d9875",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.263.3",
+            "version": "3.263.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "be23e6b278e9a3f4a5b15394f85e9c3f54c9dd7e"
+                "reference": "92c6d3d8e328c7c30788f5091725a658356759db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/be23e6b278e9a3f4a5b15394f85e9c3f54c9dd7e",
-                "reference": "be23e6b278e9a3f4a5b15394f85e9c3f54c9dd7e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/92c6d3d8e328c7c30788f5091725a658356759db",
+                "reference": "92c6d3d8e328c7c30788f5091725a658356759db",
                 "shasum": ""
             },
             "require": {
@@ -150,9 +150,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.263.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.263.6"
             },
-            "time": "2023-04-04T18:24:59+00:00"
+            "time": "2023-04-07T18:23:41+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -749,6 +749,49 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "spackleso/spackle-php",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spackleso/spackle-php.git",
+                "reference": "86eb63ec37cd248e3b84a5123d6480c5fe0731e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/86eb63ec37cd248e3b84a5123d6480c5fe0731e9",
+                "reference": "86eb63ec37cd248e3b84a5123d6480c5fe0731e9",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.263"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spackle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hunter Clarke",
+                    "email": "hunter@spackle.so"
+                }
+            ],
+            "description": "Spackle is the easiest way to integrate your PHP app with Stripe Billing. See https://www.spackle.so for details.",
+            "support": {
+                "issues": "https://github.com/spackleso/spackle-php/issues",
+                "source": "https://github.com/spackleso/spackle-php/tree/0.0.2"
+            },
+            "time": "2023-04-08T16:18:39+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

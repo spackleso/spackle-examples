@@ -2,7 +2,8 @@
     "name": "spackleso/spackle-nginx",
     "type": "project",
     "require": {
-        "aws/aws-sdk-php": "^3.263"
+        "aws/aws-sdk-php": "^3.263",
+        "spackleso/spackle-php": "^0.0.2"
     },
     "license": "MIT",
     "authors": [
