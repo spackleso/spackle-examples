@@ -26,7 +26,7 @@ $path = request_path();
 if ($path == 'customers') {
   header('Content-Type: application/json; charset=utf-8');
   $start = microtime(true);
-  $customer = \Spackle\Customer::retrieve('cus_NEnYPqzaKzNlGG');
+  $customer = \Spackle\Customer::retrieve($_POST['customer_id']);
   $end = microtime(true);
   echo json_encode(
     array(
