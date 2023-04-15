@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import Spackle from './spackle-node/src';
+import Spackle from 'spackle-node';
 import bodyParser from 'body-parser';
 
 dotenv.config();
@@ -20,11 +20,11 @@ app.get('/', (req: Request, res: Response) => {
 
 app.post('/customers', async (req: Request, res: Response) => {
   const start = Date.now();
-  const customer = await spackle.store?.getCustomerData(req.body.customer_id);
+  const customer = await spackle.customers.retrieve(req.body.customer_id);
   const end = Date.now();
   res.json({
     time: (end - start) / 1000,
-    customer,
+    customer: customer.data,
   });
 });
 
