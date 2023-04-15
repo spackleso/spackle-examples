@@ -34,18 +34,20 @@ class DynamoDBStore implements Store {
     if (!this.session) {
       this.session = await createSession(this.spackle);
     }
-  }
-
-  async getCustomerData(customerId: string) {
-    if (!this.session) {
-      this.session = await createSession(this.spackle);
-    }
 
     if (!this.client) {
       this.client = new DynamoDBClient({
         region: this.session.adapter.region,
         credentials: fromSpackleCredentials(this.spackle, this.session, (s) => this.session = s),
       });
+    }
+  }
+
+  async getCustomerData(customerId: string) {
+    this.bootstrap();
+
+    if (!this.session || !this.client) {
+      throw new Error("Session or client not initialized");
     }
 
     const item = await this.client.send(new GetItemCommand({
