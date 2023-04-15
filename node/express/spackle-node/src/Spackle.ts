@@ -13,6 +13,7 @@ class Spackle {
   async bootstrap() {
     if (!this.store) {
       this.store = new DynamoDBStore(this);
+      this.store.bootstrap();
     }
   }
 }

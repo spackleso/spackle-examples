@@ -30,6 +30,12 @@ class DynamoDBStore implements Store {
     this.spackle = spackle;
   }
 
+  async bootstrap(): Promise<void> {
+    if (!this.session) {
+      this.session = await createSession(this.spackle);
+    }
+  }
+
   async getCustomerData(customerId: string) {
     if (!this.session) {
       this.session = await createSession(this.spackle);
