@@ -4,7 +4,6 @@ require "sinatra/json"
 
 Spackle.api_key = ENV['SPACKLE_API_KEY']
 Spackle.log_level = 'debug'
-Spackle.bootstrap()
 
 get '/' do
   send_file 'templates/index.html'
