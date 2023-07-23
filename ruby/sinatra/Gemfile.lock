@@ -28,7 +28,7 @@ GEM
       rack-protection (= 3.0.5)
       sinatra (= 3.0.5)
       tilt (~> 2.0)
-    spackle-ruby (0.0.13)
+    spackle-ruby (0.0.14)
       nokogiri (~> 1.13)
       stripe (~> 8.3)
     stripe (8.6.0)
@@ -43,7 +43,7 @@ DEPENDENCIES
   puma (~> 6.2)
   sinatra (~> 3.0)
   sinatra-contrib (~> 3.0)
-  spackle-ruby (~> 0.0.13)
+  spackle-ruby (~> 0.0.14)
 
 BUNDLED WITH
    2.4.10
