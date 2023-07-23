@@ -10,7 +10,7 @@ packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-spackle-python = "^0.0.37"
+spackle-python = "^0.0.42"
 Flask = "^2.2.3"
 python-dotenv = "^1.0.0"
 gunicorn = "^20.1.0"

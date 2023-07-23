@@ -6,7 +6,6 @@ from flask import Flask, render_template, request, jsonify
 
 spackle.api_key = os.getenv('SPACKLE_API_KEY')
 spackle.log = "debug"
-spackle.bootstrap()
 
 
 app = Flask(__name__)
