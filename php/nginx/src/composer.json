@@ -1,15 +1,14 @@
 {
-    "name": "spackleso/spackle-nginx",
-    "type": "project",
-    "require": {
-        "aws/aws-sdk-php": "^3.263",
-        "spackleso/spackle-php": "^0.0.4"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Hunter Clarke",
-            "email": "hunter@spackle.so"
-        }
-    ]
+  "name": "spackleso/spackle-nginx",
+  "type": "project",
+  "require": {
+    "spackleso/spackle-php": "^0.0.5"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hunter Clarke",
+      "email": "hunter@spackle.so"
+    }
+  ]
 }

@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 
-\Spackle\Spackle::setApiKey(getenv('SPACKLE_API_KEY'));
 \Spackle\Spackle::setSSLEnabled(false);
 
 function request_path()
@@ -25,6 +24,7 @@ $path = request_path();
 
 if ($path == 'customers') {
   header('Content-Type: application/json; charset=utf-8');
+  \Spackle\Spackle::setApiKey($_POST['api_key']);
   $start = microtime(true);
   $customer = \Spackle\Customer::retrieve($_POST['customer_id']);
   $end = microtime(true);
