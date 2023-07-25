@@ -6,8 +6,6 @@ import bodyParser from 'body-parser';
 
 dotenv.config();
 
-const spackle = new Spackle(process.env.SPACKLE_API_KEY || '');
-
 const app: Express = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -19,6 +17,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.post('/customers', async (req: Request, res: Response) => {
+  const spackle = new Spackle(req.body.api_key);
   const start = Date.now();
   const customer = await spackle.customers.retrieve(req.body.customer_id);
   const end = Date.now();
@@ -29,6 +28,5 @@ app.post('/customers', async (req: Request, res: Response) => {
 });
 
 app.listen(port, async () => {
-  await spackle.bootstrap();
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
