@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 
-\Spackle\Spackle::setSSLEnabled(false);
-
 function request_path()
 {
     $request_uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
