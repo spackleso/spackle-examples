@@ -4,7 +4,6 @@ import time
 import spackle
 from flask import Flask, render_template, request, jsonify
 
-spackle.api_key = os.getenv('SPACKLE_API_KEY')
 spackle.log = "debug"
 
 
@@ -18,8 +17,9 @@ def home():
 
 @app.route("/customers", methods=['POST'])
 def customer():
+    spackle.api_key = request.form.get('api_key')
     start = time.time()
-    customer = spackle.Customer.retrieve(request.form.get('customer_id'))
+    customer = spackle.wait_for_customer(request.form.get('customer_id'))
     end = time.time()
     return jsonify({
         'time': end - start,
