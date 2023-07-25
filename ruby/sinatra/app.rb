@@ -2,7 +2,6 @@ require 'spackle'
 require 'sinatra'
 require "sinatra/json"
 
-Spackle.api_key = ENV['SPACKLE_API_KEY']
 Spackle.log_level = 'debug'
 
 get '/' do
@@ -10,6 +9,7 @@ get '/' do
 end
 
 post '/customers' do
+  Spackle.api_key = params[:api_key]
   start = Time.now
   customer = Spackle::Customer.retrieve(params[:customer_id])
   finish = Time.now
