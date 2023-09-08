@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96f5e779398a4aaa577a3b545c3a0bd3",
+    "content-hash": "ed4cb708ab6887cda6ff46055da484a4",
     "packages": [
         {
             "name": "spackleso/spackle-php",
-            "version": "0.0.5",
+            "version": "0.0.7-BETA",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spackleso/spackle-php.git",
-                "reference": "b358ca3f73f41689ead57ff48604a3574df9c743"
+                "reference": "86f68b5e0ae012fef68f7b4a51af901f542e4cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/b358ca3f73f41689ead57ff48604a3574df9c743",
-                "reference": "b358ca3f73f41689ead57ff48604a3574df9c743",
+                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/86f68b5e0ae012fef68f7b4a51af901f542e4cc0",
+                "reference": "86f68b5e0ae012fef68f7b4a51af901f542e4cc0",
                 "shasum": ""
             },
             "require": {
@@ -45,22 +45,22 @@
             "description": "Spackle is the easiest way to integrate your PHP app with Stripe Billing. See https://www.spackle.so for details.",
             "support": {
                 "issues": "https://github.com/spackleso/spackle-php/issues",
-                "source": "https://github.com/spackleso/spackle-php/tree/0.0.5"
+                "source": "https://github.com/spackleso/spackle-php/tree/0.0.7-BETA"
             },
-            "time": "2023-07-25T22:13:33+00:00"
+            "time": "2023-09-08T02:13:10+00:00"
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v10.18.0",
+            "version": "v10.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "c32549e443a619d1b885b99d624568ecae82d6a0"
+                "reference": "b4ab319731958077227fad1874a3671458c5d593"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c32549e443a619d1b885b99d624568ecae82d6a0",
-                "reference": "c32549e443a619d1b885b99d624568ecae82d6a0",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/b4ab319731958077227fad1874a3671458c5d593",
+                "reference": "b4ab319731958077227fad1874a3671458c5d593",
                 "shasum": ""
             },
             "require": {
@@ -106,15 +106,17 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v10.18.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v10.21.0"
             },
-            "time": "2023-07-20T16:59:49+00:00"
+            "time": "2023-08-11T00:23:24+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "spackleso/spackle-php": 10
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

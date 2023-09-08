@@ -32,6 +32,11 @@ if ($path == 'customers') {
       "time" => $end - $start,
     )
   );
+} elseif ($path == 'pricing-table') {
+  header('Content-Type: application/json; charset=utf-8');
+  \Spackle\Spackle::setApiKey($_POST['api_key']);
+  $table = \Spackle\PricingTable::retrieve($_POST['pricing_table_id']);
+  echo json_encode($table);
 } else {
   readfile('templates/index.html');
 }
