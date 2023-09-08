@@ -1,4 +1,3 @@
-import os
 import time
 
 import spackle
@@ -25,3 +24,10 @@ def customer():
         'time': end - start,
         'customer': customer.data,
     })
+
+
+@app.route("/pricing-table", methods=['POST'])
+def pricing_table():
+    spackle.api_key = request.form.get('api_key')
+    table = spackle.PricingTable.retrieve(request.form.get('pricing_table_id'))
+    return jsonify(table)

@@ -1,5 +1,5 @@
 run:
-	flask -e .env -A app:app run
+	FLASK_APP=app/app.py flask run
 
 build:
 	poetry install
