@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed4cb708ab6887cda6ff46055da484a4",
+    "content-hash": "6209b0dec36c862c0c439666bfc78beb",
     "packages": [
         {
             "name": "spackleso/spackle-php",
-            "version": "0.0.7-BETA",
+            "version": "0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spackleso/spackle-php.git",
@@ -45,7 +45,7 @@
             "description": "Spackle is the easiest way to integrate your PHP app with Stripe Billing. See https://www.spackle.so for details.",
             "support": {
                 "issues": "https://github.com/spackleso/spackle-php/issues",
-                "source": "https://github.com/spackleso/spackle-php/tree/0.0.7-BETA"
+                "source": "https://github.com/spackleso/spackle-php/tree/0.0.7"
             },
             "time": "2023-09-08T02:13:10+00:00"
         },
@@ -114,9 +114,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "spackleso/spackle-php": 10
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

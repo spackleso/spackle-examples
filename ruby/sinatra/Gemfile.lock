@@ -38,7 +38,7 @@ GEM
       rack-protection (= 3.0.5)
       sinatra (= 3.0.5)
       tilt (~> 2.0)
-    spackle-ruby (0.0.19.beta)
+    spackle-ruby (0.0.19)
       faraday (~> 2.7)
       faraday-net_http_persistent (~> 2.0)
       nokogiri (~> 1.13)
@@ -55,7 +55,7 @@ DEPENDENCIES
   puma (~> 6.2)
   sinatra (~> 3.0)
   sinatra-contrib (~> 3.0)
-  spackle-ruby (~> 0.0.19.beta)
+  spackle-ruby (~> 0.0.19)
 
 BUNDLED WITH
    2.4.10
