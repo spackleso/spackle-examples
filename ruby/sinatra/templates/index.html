@@ -8,25 +8,47 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 flex flex-col gap-y-8">
       <div class="bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl mb-4">Spackle Sinatra</h2>
-        <form id="customer-form" class="space-y-4">
-          <div>
-            <label for="api_key" class="block mb-1">API Key:</label>
-            <input type="text" id="api_key" name="api_key" class="w-full px-4 py-2 border rounded shadow-sm" />
-          </div>
-          <div>
-            <label for="customer_id" class="block mb-1">Customer ID:</label>
-            <input type="text" id="customer_id" name="customer_id" class="w-full px-4 py-2 border rounded shadow-sm" />
-          </div>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Submit
-          </button>
-        </form>
-        <div id="results" class="mt-6">
-          <p class="mb-4 p-0"><strong>Fetched in:</strong> <span id="time">0</span>s</p>
-          <h4 class="text-xl mb-2">Features</h4>
+        <div>
+          <label for="api_key" class="block mb-1">API Key:</label>
+          <input type="text" id="api_key" name="api_key" class="w-full px-4 py-2 border rounded shadow-sm" />
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded shadow-md">
+        <div id="pricing-table" class="mt-6">
+          <h3 class="text-xl"">Pricing Table</h3>
+          <form id="pricing-table-form" class="my-4 space-y-4 flex flex-row gap-x-4 items-end">
+            <div class="w-full">
+              <label for="table_id" class="block mb-1">Pricing Table ID:</label>
+              <input type="text" id="pricing_table_id" name="pricing_table_id" class="w-full px-4 py-2 border rounded shadow-sm" />
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Submit
+            </button>
+          </form>
+          <table id="pricing-table-display"></table>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded shadow-md">
+        <div id="entitlements" class="mt-6">
+          <h3 class="text-xl"">Entitlements</h3>
+
+          <form id="customer-form" class="my-4 space-y-4 flex flex-row gap-x-4 items-end">
+            <div class="w-full">
+              <label for="customer_id" class="block mb-1">Customer ID:</label>
+              <input type="text" id="customer_id" name="customer_id" class="w-full px-4 py-2 border rounded shadow-sm" />
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Submit
+            </button>
+          </form>
+
+          <p class="my-4 p-0"><strong>Fetched in:</strong> <span id="time">0</span>s</p>
+          <h4 class="text-lg mb-2">Features</h4>
           <table id="features" class="w-full text-left border-collapse">
             <thead>
               <tr>
@@ -40,7 +62,7 @@
             </thead>
             <tbody></tbody>
           </table>
-          <h4 class="text-xl mt-6 mb-2">Subscriptions</h4>
+          <h4 class="text-lg mt-6 mb-2">Subscriptions</h4>
           <table id="subscriptions" class="w-full text-left border-collapse overflow-scroll">
             <thead>
               <tr>
@@ -73,7 +95,7 @@
           url: "/customers",
           data: { api_key: apiKey, customer_id: customerId },
           success: function (response) {
-            renderResults(response);
+            renderEntitlements(response);
           },
           error: function (err) {
             console.error("Error:", err);
@@ -81,7 +103,25 @@
         });
       });
 
-      function renderResults(data) {
+      $("#pricing-table-form").on("submit", function (event) {
+        event.preventDefault();
+        const apiKey = $("#api_key").val();
+        const pricingTableId = $("#pricing_table_id").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/pricing-table",
+          data: { api_key: apiKey, pricing_table_id: pricingTableId },
+          success: function (response) {
+            renderPricingTable(response);
+          },
+          error: function (err) {
+            console.error("Error:", err);
+          },
+        });
+      });
+
+      function renderEntitlements(data) {
         const time = data.time;
         const timeContainer = $("#time");
         timeContainer.text(time);
@@ -131,6 +171,42 @@
           </tr>`;
           subscriptionsContainer.append(subscriptionRow);
         });
+      }
+
+      function renderPricingTable(data) {
+        const products = data.products
+        const pricingTableContainer = $("#pricing-table-display");
+        pricingTableContainer.empty();
+
+        if (products.length === 0) {
+          pricingTableContainer.append("<p>No products found.</p>");
+          return;
+        }
+
+        let ths = `<th></th>`;
+        products.forEach((product) => {
+          let th = `<th class="py-2 px-4 border border-gray-300">${product.name}</th>`;
+          ths += th;
+        });
+        pricingTableContainer.append(`<thead><tr>${ths}</tr></thead>`);
+
+        let trs = ``
+        products[0].features.forEach((feature) => {
+          let tds = `<td class="py-2 px-4 border border-gray-300">${feature.name}</td>`
+          products.forEach((product) => {
+            let productFeature = product.features.find((f) => f.key === feature.key);
+            let td
+            if (productFeature.type === 0) {
+              td = `<td class="py-2 px-4 border border-gray-300">${productFeature.value_flag}</td>`;
+            } else {
+              td = `<td class="py-2 px-4 border border-gray-300">${productFeature.value_limit === null ? 'None' : productFeature.value_limit}</td>`;
+            }
+            tds += td;
+          });
+          let tr = `<tr>${tds}</tr>`;
+          trs += tr;
+        });
+        pricingTableContainer.append(`<tbody>${trs}</tbody>`);
       }
     </script>
   </body>

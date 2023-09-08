@@ -15,3 +15,9 @@ post '/customers' do
   finish = Time.now
   json customer: customer.data, time: finish - start
 end
+
+post '/pricing-table' do
+  Spackle.api_key = params[:api_key]
+  table = Spackle::PricingTable.retrieve(params[:pricing_table_id])
+  json table
+end
