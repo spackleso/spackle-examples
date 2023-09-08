@@ -27,6 +27,12 @@ app.post('/customers', async (req: Request, res: Response) => {
   });
 });
 
+app.post('/pricing-table', async (req: Request, res: Response) => {
+  const spackle = new Spackle(req.body.api_key);
+  const table = await spackle.pricingTables.retrieve(req.body.pricing_table_id);
+  res.json(table);
+});
+
 app.listen(port, async () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
