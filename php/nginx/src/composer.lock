@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6209b0dec36c862c0c439666bfc78beb",
+    "content-hash": "04df6ad4abd09387230d00edd592d717",
     "packages": [
         {
             "name": "spackleso/spackle-php",
-            "version": "0.0.7",
+            "version": "0.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spackleso/spackle-php.git",
-                "reference": "86f68b5e0ae012fef68f7b4a51af901f542e4cc0"
+                "reference": "7aa4223f4c0ccdd52e84171e8f5a9f555d6b40c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/86f68b5e0ae012fef68f7b4a51af901f542e4cc0",
-                "reference": "86f68b5e0ae012fef68f7b4a51af901f542e4cc0",
+                "url": "https://api.github.com/repos/spackleso/spackle-php/zipball/7aa4223f4c0ccdd52e84171e8f5a9f555d6b40c8",
+                "reference": "7aa4223f4c0ccdd52e84171e8f5a9f555d6b40c8",
                 "shasum": ""
             },
             "require": {
@@ -45,9 +45,9 @@
             "description": "Spackle is the easiest way to integrate your PHP app with Stripe Billing. See https://www.spackle.so for details.",
             "support": {
                 "issues": "https://github.com/spackleso/spackle-php/issues",
-                "source": "https://github.com/spackleso/spackle-php/tree/0.0.7"
+                "source": "https://github.com/spackleso/spackle-php/tree/0.0.8"
             },
-            "time": "2023-09-08T02:13:10+00:00"
+            "time": "2024-03-21T15:16:21+00:00"
         },
         {
             "name": "stripe/stripe-php",
@@ -119,5 +119,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -2,7 +2,7 @@
   "name": "spackleso/spackle-nginx",
   "type": "project",
   "require": {
-    "spackleso/spackle-php": "0.0.7"
+    "spackleso/spackle-php": "0.0.8"
   },
   "license": "MIT",
   "authors": [
